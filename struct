@@ -1,0 +1,64 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+
+// Initializing a class Student to create a custom Data Type
+class Student {
+public:
+    int id;
+    string name;
+
+    Student(int studentId, string studentName) : 
+    id(studentId), name(studentName){}
+};
+
+// Initializing a struct StudentInfo to create a custom Data
+// Type
+struct StudentInfo {
+    int id;
+    string name;
+
+    StudentInfo(int studentId, string studentName)
+        : id(studentId)
+        , name(studentName)
+    {
+    }
+};
+
+int main()
+{
+    // Initializing a vector  of Student objects
+    vector<Student> studentVector;
+
+    // Adding Student objects to the vector
+    studentVector.push_back(Student(201, "Rahul"));
+    studentVector.push_back(Student(202, "Neha"));
+    studentVector.push_back(Student(203, "Amit"));
+
+    // Initializing a vector  of StudentInfo objects
+    vector<StudentInfo> studentInfoVector;
+
+    // Adding StudentInfo objects to the vector
+    studentInfoVector.push_back(StudentInfo(101, "David"));
+    studentInfoVector.push_back(StudentInfo(102, "John"));
+    studentInfoVector.push_back(StudentInfo(103, "Frank"));
+
+    // Printing the elements from the vectors
+
+    cout << "Class Vector Elements:" << endl;
+    for (const auto& student : studentVector) {
+        cout << "{ID: " << student.id
+             << ", Name: " << student.name << "}" << endl;
+    }
+    cout << endl;
+
+    cout << "Struct Vector Elements:" << endl;
+    for (const auto& studentInfo : studentInfoVector) {
+        cout << "{ID: " << studentInfo.id
+             << ", Name: " << studentInfo.name << "}"
+             << endl;
+    }
+
+    return 0;
+}
